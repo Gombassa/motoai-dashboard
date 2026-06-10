@@ -1,119 +1,75 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-.pnpm-debug.log*
-
-# Diagnostic reports
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Coverage
-lib-cov
-coverage
-*.lcov
-.nyc_output
-
-# Build
-build/Release
-dist
-build
-
-# Dependencies
-node_modules/
-jspm_packages/
-
-# Compiled binary addons
-build/Release
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Optional stylelint cache
-.stylelintcache
-
-# Optional REPL history
-.node_repl_history
-
-# yarn
-.yarn-integrity
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
-
-# dotenv
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
-
-# React Native
 # OSX
+#
 .DS_Store
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-*.orig.*
-web-build/
 
-# Local env files
-.env*.local
-
-# Expo
-.expo/
-dist/
-web-build/
-expo-env.d.ts
-
-# Metro
-.metro-health-check*
-
-# Android
-android/local.properties
-*.keystore
-android/.gradle
-android/app/build/
-android/build/
-android/captures/
-android/.idea/
-android/app/.cxx/
-
-# iOS
-ios/build/
-ios/Pods/
-ios/.xcode.env.local
-*.xcworkspace
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
 DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+**/.xcode.env.local
 
-# Buck
-buck-out/
-\.buckd/
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+*.hprof
+.cxx/
 *.keystore
 !debug.keystore
+.kotlin/
 
-# Watchman
-.watchmanconfig
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
 
-# IntelliJ
-*.iml
-.idea/
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
 
-# VSCode
-.vscode/
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
+# Bundle artifact
+*.jsbundle
+
+# Ruby / CocoaPods
+**/Pods/
+/vendor/bundle/
+
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
+
+# testing
+/coverage
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
