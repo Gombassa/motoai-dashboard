@@ -72,6 +72,9 @@ def enableProguardInReleaseBuilds = false
  */
 def jscFlavor = 'io.github.react-native-community:jsc-android:2026004.+'
 
+def localProps = new Properties()
+localProps.load(new FileInputStream(rootProject.file("local.properties")))
+
 android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -84,6 +87,9 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [
+                mapsApiKey: localProps['MAPS_API_KEY']
+        ]
     }
     signingConfigs {
         debug {
@@ -119,4 +125,3 @@ dependencies {
         implementation jscFlavor
     }
 }
-

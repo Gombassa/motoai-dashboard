@@ -270,3 +270,23 @@ The API key has access to the full Google Maps Platform suite — no key changes
 - GPX track recording using GPS data
 - Ride history and stats (distance, avg speed, max speed, elevation gain)
 - Route elevation profile chart for planned rides
+
+### OLED HUD Display
+
+#### Competitive Landscape
+The prime consumer product in this space is the **Shoei GT-Air 3 Smart** (€1,199 / ~£1,050), launched at EICMA 2025 in partnership with French HUD specialists EyeLights. It features a Full HD Nano OLED display integrated into the drop-down sun visor, projecting speed, navigation, speed camera alerts, and calls at a virtual distance of 3 metres ahead of the rider, claiming 32% faster reaction time vs glancing at instruments. It includes fully integrated intercom, active noise cancellation, and 10+ hour battery — no external hardware required.
+
+**MotoAI's competitive advantages over GT-Air 3 Smart:**
+- **Helmet agnostic** — the GT-Air 3 Smart locks the tech into one specific shell; riders can't transfer it to a new helmet. MotoAI targets a modular HUD unit that works with any helmet
+- **Motorcycle telemetry** — the GT-Air 3 Smart shows generic navigation data; MotoAI adds OBD-II, TPMS, engine temp, tire pressures, RPM, alternator voltage — data a generic smart helmet will never show
+- **Open ecosystem** — MotoAI is not tied to a single helmet brand or price point
+- **Price** — a DIY ESP32 + OLED prototype costs under £20; even a polished retail unit could significantly undercut €1,199
+
+#### MotoAI HUD Implementation Plan
+- Research and select an OLED display module suitable for helmet or handlebar mounting (candidates: SSD1306 128x64, SSD1309, or SH1106 — all I2C/SPI, low power; evaluate sunlight readability and brightness tuning)
+- Connect display to an ESP32 microcontroller (WiFi + Bluetooth LE built in, strong library support)
+- Phone app broadcasts key telemetry over Bluetooth LE to the ESP32: speed, RPM, alert state, next navigation turn instruction, tire pressure warnings
+- ESP32 renders a minimal HUD layout on the OLED — speed large and central, RPM bar, active alert, next turn arrow
+- `ConnectivityPanel` "Rider HUD" device wired to actual Bluetooth LE connection state
+- Consider glare, vibration, and weatherproofing for real-world mounting
+- Evaluate EyeLights EyeRide as a premium display option (they sell the unit separately from the Shoei helmet) for higher-end MotoAI builds
